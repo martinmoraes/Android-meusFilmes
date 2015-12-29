@@ -108,13 +108,13 @@ public class CustomListAdaptador extends BaseAdapter {
         tvTitulo.setText(filme.getTitulo());
 
         // Nota
-        tvNota.setText("Nota: " + String.valueOf(filme.getNota()));
+        tvNota.setText("Nota: " + filme.getNotaSTR());
 
         // Genero
         tvGenero.setText(filme.getGeneroSTR());
 
         // Ano
-        tvAno.setText(String.valueOf(filme.getAno()));
+        tvAno.setText(filme.getAnoSTR());
 
         //
         //Verifica se precisa fazer nova requisição

@@ -59,7 +59,10 @@ public class Filme {
     }
 
     public String getAnoSTR() {
-        return String.valueOf(ano);
+        String vlr = String.valueOf(ano);
+        if(vlr.equals("0"))
+            vlr = "";
+        return vlr;
     }
 
     public void setAno(int ano) {
@@ -71,7 +74,10 @@ public class Filme {
     }
 
     public String getNotaSTR() {
-        return String.valueOf(nota);
+        String vlr = String.valueOf(nota);
+        if(vlr.equals("0.0"))
+            vlr = "";
+        return vlr;
     }
 
     public void setNota(double nota) {
@@ -95,6 +101,8 @@ public class Filme {
         for (Genero umGenero : this.genero) {
             generos = generos.concat(umGenero.getDescricao() + ", ");
         }
+        if (generos.length() > 0)
+            generos = generos.substring(0, generos.length() - 2);
         return generos;
     }
 

@@ -79,8 +79,6 @@ public class CustomListAdaptador extends BaseAdapter {
         // Pega o filme para uma linha
         Filme filme = filmeItens.get(position);
 
-
-        //TODO Tratar o tamanho da imagem antes de colocar no listView
         if (!filme.getGenero().isEmpty()) {
             if (filme.getGenero().get(0).equals("MEU APP LOCAL")) {
                 Log.d("MEU_APP", "getView - Povoando o adapter local");
@@ -97,7 +95,6 @@ public class CustomListAdaptador extends BaseAdapter {
 
         Picasso.with(context)
                 .load(img)
-                .resizeDimen(R.dimen.list_detail_image_size, R.dimen.list_detail_image_size)
                 .error(R.mipmap.foto)
                 .into(iv);
 
@@ -190,9 +187,11 @@ public class CustomListAdaptador extends BaseAdapter {
             if (oFilme.getId().equals(idFilme)) {
                 filmeItens.remove(oFilme);
                 this.notifyDataSetChanged();
+                break;
             }
         }
     }
+
     private final void povoaLocal() {
         ProgressDialog progres = ProgressDialog.show(context, "Carregando dados", "Abrindo localmente...");
         Toast.makeText(context, "Não alcançou o servidor mostrando versão de exemplo.", Toast.LENGTH_LONG).show();

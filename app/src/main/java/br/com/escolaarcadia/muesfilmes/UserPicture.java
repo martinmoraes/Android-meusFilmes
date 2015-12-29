@@ -138,9 +138,6 @@ public class UserPicture {
     }
 
     public Bitmap getBitmap() throws IOException {
-        //TODO Rotacionar as fotos da câmera
-        //TODO Redimenciona para que todas fiquem com o mesmo tamanho
-        Log.d("MEU_APP","Entoru no getBitmap()");
         if (!getInformation())
             throw new FileNotFoundException();
 

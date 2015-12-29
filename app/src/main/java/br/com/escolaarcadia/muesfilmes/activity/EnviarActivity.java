@@ -52,7 +52,6 @@ public class EnviarActivity extends Activity {
         values.put(MediaStore.Images.Media.TITLE, fotoArquivo);
         values.put(MediaStore.Images.Media.DISPLAY_NAME, fotoArquivo);
         values.put(MediaStore.Images.Media.DESCRIPTION, "Uma Foto");
-        //values.put(MediaStore.Images.Media.ORIENTATION,0); //degrees 0, 90, 180, 270
         fotoURI = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
         Intent fotoIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         fotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, fotoURI);
@@ -62,13 +61,10 @@ public class EnviarActivity extends Activity {
     private final int GALERIA_FOTO = 2;
 
     public void abreGaleria(View view) {
-        Intent imagemIntent = new Intent();
-        imagemIntent.setType("image/*");
-        imagemIntent.setAction(Intent.ACTION_PICK);
-        // Intent.ACTION_PICK - Só gerenciadores de imagens
-        // Intent.ACTION_GET_CONTENT - Gerenciadores de imagens e de arquivos
-        // imagemIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true); // Para ter mais de uma imagem no retorno
-        startActivityForResult(Intent.createChooser(imagemIntent, "Selecione..."), GALERIA_FOTO);
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_PICK);
+        startActivityForResult(Intent.createChooser(intent, "Selecione..."), GALERIA_FOTO);
     }
 
     @Override
@@ -77,13 +73,11 @@ public class EnviarActivity extends Activity {
         UserPicture up = null;
         if (resultCode == RESULT_OK) {
             if (requestCode == FOTO_CAMERA) {
-//                imagemBitmap = (Bitmap) intent.getExtras().get("data");
                 up = new UserPicture(fotoURI, getContentResolver());
             } else if (requestCode == GALERIA_FOTO) {
                 up = new UserPicture(intent.getData(), getContentResolver());
             }
             try {
-                imagemView.setPadding(0, 0, 0, 0);
                 imagemBitmap = up.getBitmap();
                 imagemView.setImageBitmap(imagemBitmap);
             } catch (IOException e) {

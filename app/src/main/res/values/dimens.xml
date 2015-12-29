@@ -8,7 +8,8 @@
     <dimen name="ano">12dip</dimen>
     <dimen name="imagem_iv">120dip</dimen>
 
-    <dimen name="list_detail_image_size">60dp</dimen>
+    <dimen name="altura_image_size">90dp</dimen>
+    <dimen name="largura_image_size">51dp</dimen>
     <dimen name="widget_min_width">110dp</dimen>
     <dimen name="widget_min_height">110dp</dimen>
 </resources>

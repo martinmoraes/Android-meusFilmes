@@ -8,34 +8,16 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="2"
+        android:layout_marginBottom="6dp"
+        android:layout_marginTop="6dp"
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imagem"/>
-
-
-        <!--android:background="@drawable/postimage"/-->
-        <!-- <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-             android:id="@+id/imagem"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:scaleType="fitCenter"
-             app:riv_border_width="2dip"
-             app:riv_corner_radius="10dp"
-             app:riv_mutate_background="true"
-             app:riv_oval="false"
-             app:riv_tile_mode="repeat" />-->
-        <!--app:riv_border_color="#333333"-->
-        <!--&lt;!&ndash; Imagem &ndash;&gt;-->
-        <!--<ImageView-->
-        <!--android:id="@+id/imagem"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content" />-->
-
 
     </LinearLayout>
 
@@ -85,4 +67,5 @@
             android:layout_height="wrap_content"
             android:visibility="gone" />
     </LinearLayout>
+
 </LinearLayout>

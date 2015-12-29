@@ -9,4 +9,10 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_foto">Foto</string>
     <string name="title_activity_mostra_post">Post Selecionado</string>
+    <string name="titulo">Título: </string>
+    <string name="pontos">Pontos: </string>
+    <string name="ano">Ano: </string>
+    <string name="genero">Genero: </string>
+    <string name="postar">Postar!</string>
+    <string name="digite">Digite aqui...</string>
 </resources>

@@ -32,19 +32,25 @@ import br.com.escolaarcadia.muesfilmes.UserPicture;
 public class EnviarActivity extends Activity {
     private ImageView imagemView;
     private Bitmap imagemBitmap;
-    private EditText editText;
+    private EditText edTitulo;
+    private EditText edAno;
+    private EditText edGenero;
+    private EditText edPontos;
     private Uri fotoURI = null;
-
+    private final int FOTO_CAMERA = 1;
+    private final int GALERIA_FOTO = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activityenviar);
         imagemView = (ImageView) findViewById(R.id.imageView);
-        editText = (EditText) findViewById(R.id.editText);
+        edTitulo = (EditText) findViewById(R.id.titulo);
+        edAno = (EditText) findViewById(R.id.ano);
+        edGenero = (EditText) findViewById(R.id.genero);
+        edPontos = (EditText) findViewById(R.id.pontos);
     }
 
-    private final int FOTO_CAMERA = 1;
 
     public void bateFoto(View view) {
         String fotoArquivo = UUID.randomUUID().toString() + ".jpg";
@@ -57,8 +63,6 @@ public class EnviarActivity extends Activity {
         fotoIntent.putExtra(MediaStore.EXTRA_OUTPUT, fotoURI);
         startActivityForResult(fotoIntent, FOTO_CAMERA);
     }
-
-    private final int GALERIA_FOTO = 2;
 
     public void abreGaleria(View view) {
         Intent intent = new Intent();
@@ -88,7 +92,6 @@ public class EnviarActivity extends Activity {
         }
     }
 
-
     public void enviaMenssagem(View view) {
         if (imagemBitmap != null) {
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -96,11 +99,14 @@ public class EnviarActivity extends Activity {
             InputStream myInputStream = new ByteArrayInputStream(stream.toByteArray());
             RequestParams params = new RequestParams();
             params.setForceMultipartEntityContentType(true);
-            byte[] myByteArray = stream.toByteArray();
-            params.put("profile_picture", new ByteArrayInputStream(myByteArray), "image.png");
+           /* byte[] myByteArray = stream.toByteArray();
+            params.put("arq", new ByteArrayInputStream(myByteArray), "image.png");*/
 
             params.put("arq", myInputStream);
-            params.put("titulo", editText.getText().toString());
+            params.put("titulo", edTitulo.getText().toString());
+            params.put("ano", edAno.getText().toString());
+            params.put("nota", edPontos.getText().toString());
+            params.put("genero", edGenero.getText().toString());
 
             AsyncHttpClient cliente = new AsyncHttpClient();
             cliente.post(
@@ -120,7 +126,10 @@ public class EnviarActivity extends Activity {
                     });
             Toast.makeText(this, "Enviando.", Toast.LENGTH_SHORT).show();
             imagemBitmap = null;
-            editText.setText("");
+            edTitulo.setText("");
+            edAno.setText("");
+            edGenero.setText("");
+            edPontos.setText("");
             imagemView.setPadding(220, 220, 220, 220);
             imagemView.setImageResource(R.mipmap.fotobranco);
 

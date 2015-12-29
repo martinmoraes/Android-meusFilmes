@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.escolaarcadia.muesfilmes.activity.RecebidosActivity">
+
+
+    <!-- android:layout_marginTop="18dp" -->
+    <ListView
+        android:id="@+id/lv_lista_de_filmes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:divider="#FAFAFA"
+        android:background="#FAFAFA"
+        android:dividerHeight="10.0sp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="titulo">17dp</dimen>
+    <dimen name="pontuacao">15dip</dimen>
+    <dimen name="genero">13dip</dimen>
+    <dimen name="ano">12dip</dimen>
+    <dimen name="imagem_iv">120dip</dimen>
+
+    <dimen name="list_detail_image_size">60dp</dimen>
+    <dimen name="widget_min_width">110dp</dimen>
+    <dimen name="widget_min_height">110dp</dimen>
+</resources>

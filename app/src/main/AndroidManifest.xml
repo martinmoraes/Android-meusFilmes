@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="br.com.escolaarcadia.muesfilmes" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+<!--         <android:uses-permission android:name="android.permission.READ_PHONE_STATE" /> -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ico"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="br.com.escolaarcadia.muesfilmes.activity.InicialActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="br.com.escolaarcadia.muesfilmes.activity.RecebidosActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_lista_recebidos"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name="br.com.escolaarcadia.muesfilmes.activity.EnviarActivity"
+            android:label="@string/title_activity_foto" />
+        <activity
+            android:name="br.com.escolaarcadia.muesfilmes.activity.MostraPostActivity"
+            android:label="@string/title_activity_mostra_post" >
+        </activity>
+    </application>
+
+</manifest>

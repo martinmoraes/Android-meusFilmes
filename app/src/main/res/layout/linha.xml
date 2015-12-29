@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@drawable/post"
+              android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imagem"/>
+
+
+        <!--android:background="@drawable/postimage"/-->
+        <!-- <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:id="@+id/imagem"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:scaleType="fitCenter"
+             app:riv_border_width="2dip"
+             app:riv_corner_radius="10dp"
+             app:riv_mutate_background="true"
+             app:riv_oval="false"
+             app:riv_tile_mode="repeat" />-->
+        <!--app:riv_border_color="#333333"-->
+        <!--&lt;!&ndash; Imagem &ndash;&gt;-->
+        <!--<ImageView-->
+        <!--android:id="@+id/imagem"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold" />
+
+        <!-- Pontuação -->
+        <TextView
+            android:id="@+id/nota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Genero -->
+        <TextView
+            android:id="@+id/genero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Ano -->
+        <TextView
+            android:id="@+id/ano"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!--URL Imagem-->
+        <TextView
+            android:id="@+id/imagemURL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <!--ID-->
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+    </LinearLayout>
+</LinearLayout>

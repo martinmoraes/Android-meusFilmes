@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.escolaarcadia.muesfilmes.activity.EnviarActivity">
+
+
+    <!-- Imagem -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5"
+            android:padding="120dp"
+            android:background="#CCCCCC"
+            android:src="@mipmap/fotobranco"
+            android:onClick="bateFoto"/>
+    </LinearLayout>
+
+    <!-- Botões Foto e Galeria -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="11"
+        android:orientation="horizontal"
+        android:background="#CCCCCC">
+
+        <!-- Bt Foto -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btBateFoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/botaoradius"
+                android:onClick="bateFoto"
+                android:padding="5dp"
+                android:src="@mipmap/fotobranco" />
+        </LinearLayout>
+
+        <!-- Bt Galeria -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btGaleria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/botaoradius"
+                android:onClick="abreGaleria"
+                android:padding="5dp"
+                android:src="@mipmap/galeriabranco" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Texto de envio -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="10">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:gravity="top|left"
+            android:hint="Digite aqui..."
+            android:inputType="textMultiLine"
+            android:lines="2"
+            android:minLines="1"
+            android:scrollHorizontally="false"
+            android:scrollbars="vertical"
+            android:textColorHint="#cccccc" />
+    </LinearLayout>
+
+    <!-- Bt Enviar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="11"
+        android:gravity="center">
+
+
+        <Button
+            android:id="@+id/btEnvia"
+            style="@style/BotaoEnviar"
+            android:onClick="enviaMenssagem"
+            android:background="@drawable/degradeazul"
+            android:text="Postar!"></Button>
+    </LinearLayout>
+
+
+</LinearLayout>

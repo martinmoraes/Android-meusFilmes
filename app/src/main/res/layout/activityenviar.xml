@@ -23,8 +23,6 @@
     </LinearLayout>
 
     <!-- Botões Foto e Galeria -->
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -95,7 +93,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
-                android:hint="@string/digite" />
+                android:hint="@string/digite"
+                android:textSize="15dp"/>
         </LinearLayout>
 
         <!-- Pontuação -->
@@ -118,7 +117,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
-                android:hint="@string/digite" />
+                android:hint="@string/digite"
+                android:textSize="15dp"/>
         </LinearLayout>
 
         <!-- Genero -->
@@ -141,7 +141,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
-                android:hint="@string/digite" />
+                android:hint="@string/digite"
+                android:textSize="15dp"/>
         </LinearLayout>
 
         <!-- Ano -->
@@ -164,9 +165,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@android:color/white"
-                android:hint="@string/digite" />
+                android:hint="@string/digite"
+                android:textSize="15dp"/>
         </LinearLayout>
-
     </LinearLayout>
 
     <!-- Bt Enviar -->
@@ -174,7 +175,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
-
 
         <Button
             android:id="@+id/btEnvia"
@@ -184,8 +184,6 @@
             android:onClick="enviaMenssagem"
             style="@style/BotaoEnviar"
             android:text="@string/postar"/>
-
-
     </LinearLayout>
 
 

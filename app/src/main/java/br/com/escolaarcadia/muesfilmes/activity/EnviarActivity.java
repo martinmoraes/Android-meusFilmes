@@ -83,6 +83,7 @@ public class EnviarActivity extends Activity {
             }
             try {
                 imagemBitmap = up.getBitmap();
+                imagemView.setPadding(0, 0, 0, 0);
                 imagemView.setImageBitmap(imagemBitmap);
             } catch (IOException e) {
                 Log.e("GALERIA", "Falha ao carregar a imagem.", e);

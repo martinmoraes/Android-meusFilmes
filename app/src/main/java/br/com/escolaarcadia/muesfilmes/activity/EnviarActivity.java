@@ -83,7 +83,7 @@ public class EnviarActivity extends Activity {
             }
             try {
                 imagemBitmap = up.getBitmap();
-                imagemView.setPadding(0, 0, 0, 0);
+                //imagemView.setPadding(0, 0, 0, 0);
                 imagemView.setImageBitmap(imagemBitmap);
             } catch (IOException e) {
                 Log.e("GALERIA", "Falha ao carregar a imagem.", e);
@@ -131,13 +131,11 @@ public class EnviarActivity extends Activity {
             edAno.setText("");
             edGenero.setText("");
             edPontos.setText("");
-            imagemView.setPadding(220, 220, 220, 220);
+            //imagemView.setPadding(220, 220, 220, 220);
             imagemView.setImageResource(R.mipmap.fotobranco);
 
         } else {
             Toast.makeText(this, "Selecione uma image.", Toast.LENGTH_SHORT).show();
         }
     }
-
-
 }

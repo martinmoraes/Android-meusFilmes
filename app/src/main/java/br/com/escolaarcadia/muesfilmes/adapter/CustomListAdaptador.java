@@ -21,6 +21,7 @@ import com.squareup.picasso.Picasso;
 import org.apache.http.Header;
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +39,7 @@ public class CustomListAdaptador extends BaseAdapter {
     private LayoutInflater inflater;
     private List<Filme> filmeItens;
     private boolean emRequisicao = false;
+    private boolean povoaLocal = false;
 
     public CustomListAdaptador(Context context) {
         this.context = context;
@@ -79,24 +81,23 @@ public class CustomListAdaptador extends BaseAdapter {
         // Pega o filme para uma linha
         Filme filme = filmeItens.get(position);
 
-        if (!filme.getGenero().isEmpty()) {
-            if (filme.getGenero().get(0).equals("MEU APP LOCAL")) {
-                Log.d("MEU_APP", "getView - Povoando o adapter local");
-                Context context = convertView.getContext();
-                int img = context.getResources().getIdentifier(filme.getImagemUrl(), "mipmap", context.getPackageName());
-                iv.setImageResource(img);
-                imagemURL.setText("MEU APP LOCAL:" + img);
-            }
-        }
 
         // Imagem
-        String img = Comunicacao.urlConsulta + filme.getImagemUrl();
-        imagemURL.setText(img);
+        if (povoaLocal) {
+            Context context = convertView.getContext();
+            int img = context.getResources().getIdentifier(filme.getImagemUrl(), "mipmap", context.getPackageName());
+            iv.setImageResource(img);
+            Log.d("MEU_APP", "img: "+ img);
+            imagemURL.setText("MEU APP LOCAL:" + img);
+        } else {
+            String img = Comunicacao.urlConsulta + filme.getImagemUrl();
+            imagemURL.setText(img);
 
-        Picasso.with(context)
-                .load(img)
-                .error(R.mipmap.foto)
-                .into(iv);
+            Picasso.with(context)
+                    .load(img)
+                    .error(R.mipmap.foto)
+                    .into(iv);
+        }
 
         // ID
         tvId.setText(filme.getId());
@@ -128,6 +129,7 @@ public class CustomListAdaptador extends BaseAdapter {
     public void fazRequisicao(String idFilmeInicial, final String direcao) {
         if (Comunicacao.isConectado(context)) {
             if (!emRequisicao) {
+                this.povoaLocal = false;
                 AsyncHttpClient client = new AsyncHttpClient();
                 RequestParams param = new RequestParams();
                 param.put("origem", "emJSON");
@@ -157,7 +159,7 @@ public class CustomListAdaptador extends BaseAdapter {
                                         filmeItens.addAll(novaLista);
                                     } else if (Comunicacao.DIRECAO_NOVOS.equals(direcao)) {
                                         filmeItens.addAll(0, novaLista);
-                                    } else if(Comunicacao.DIRECAO_ULTIMOS.equals(direcao)){
+                                    } else if (Comunicacao.DIRECAO_ULTIMOS.equals(direcao)) {
                                         filmeItens = novaLista;
                                     }
                                     notifyDataSetChanged();
@@ -173,6 +175,22 @@ public class CustomListAdaptador extends BaseAdapter {
                                 emRequisicao = false;
                                 povoaLocal();
                             }
+
+                            @Override
+                            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                                Log.e("MEU_APP", "onFailure STRING: " + statusCode, throwable);
+                                emRequisicao = false;
+                                povoaLocal();
+                            }
+
+                            @Override
+                            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                                Log.e("MEU_APP", "onFailure JSONObject: " + statusCode, throwable);
+                                emRequisicao = false;
+                                povoaLocal();
+                            }
+
+
                         });
                 emRequisicao = true;
                 progres.dismiss();
@@ -193,8 +211,9 @@ public class CustomListAdaptador extends BaseAdapter {
     }
 
     private final void povoaLocal() {
+        this.povoaLocal = true;
         ProgressDialog progres = ProgressDialog.show(context, "Carregando dados", "Abrindo localmente...");
-        Toast.makeText(context, "Não alcançou o servidor mostrando versão de exemplo.", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, "Não alcançou o servidor mostrando versão exemplo.", Toast.LENGTH_LONG).show();
 
         ArrayList<Genero> genero = new ArrayList<Genero>();
         genero.add(new Genero("MEU APP LOCAL"));
@@ -208,6 +227,7 @@ public class CustomListAdaptador extends BaseAdapter {
         filmeItens.add(new Filme("8", "perfil", "perfil", 2015, 8.5, genero));
         progres.dismiss();
         Log.d("MEU_APP", "povoaLocal() - Povoada a filmeItens local");
+        notifyDataSetChanged();
     }
 }
 

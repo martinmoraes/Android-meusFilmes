@@ -10,15 +10,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:layout_weight="6">
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="#CCCCCC"
             android:onClick="bateFoto"
-            android:padding="120dp"
+
             android:src="@mipmap/fotobranco"/>
     </LinearLayout>
 
@@ -26,63 +26,46 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1.42"
+        android:layout_weight="1"
         android:background="#CCCCCC"
         android:orientation="horizontal">
 
-        <!-- Bt Foto -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
-
             <ImageButton
                 android:id="@+id/btBateFoto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/botaoradius"
                 android:onClick="bateFoto"
-                android:padding="5dp"
-                android:src="@mipmap/fotobranco"/>
-
-
-        </LinearLayout>
-
-        <!-- Bt Galeria -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center">
+                android:src="@mipmap/fotobranco"
+                android:layout_weight="1"/>
 
             <ImageButton
                 android:id="@+id/btGaleria"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/botaoradius"
                 android:onClick="abreGaleria"
-                android:padding="5dp"
-                android:src="@mipmap/galeriabranco"/>
-        </LinearLayout>
+                android:src="@mipmap/galeriabranco"
+                android:layout_weight="1"/>
+
     </LinearLayout>
 
     <!-- Texto de envio -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:orientation="vertical">
 
         <!-- Título -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
             <TextView
                 android:id="@+id/tvtitulo"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/titulo"
@@ -101,11 +84,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
             <TextView
                 android:id="@+id/tvpontos"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/pontos"
@@ -125,11 +109,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
             <TextView
                 android:id="@+id/tvgenero"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/genero"
@@ -149,11 +134,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_weight="1">
 
             <TextView
                 android:id="@+id/tvano"
-                android:layout_weight="3"
+                android:layout_weight="4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/ano"
@@ -173,8 +159,7 @@
     <!-- Bt Enviar -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/btEnvia"

@@ -1,4 +1,4 @@
-package br.com.escolaarcadia.muesfilmes.activity;
+package com.blogspot.escolaarcadia.activity;
 
 import android.app.TabActivity;
 import android.content.Intent;
@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.webkit.WebView;
 import android.widget.TabHost;
 
-import br.com.escolaarcadia.muesfilmes.R;
+import br.com.escolaarcadia.meusfilmes.R;
 
 @SuppressWarnings("deprecation")
 public class InicialActivity extends TabActivity {

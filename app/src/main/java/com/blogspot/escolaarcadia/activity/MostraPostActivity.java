@@ -1,18 +1,15 @@
-package br.com.escolaarcadia.muesfilmes.activity;
+package com.blogspot.escolaarcadia.activity;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
-import br.com.escolaarcadia.muesfilmes.R;
+import br.com.escolaarcadia.meusfilmes.R;
 
 public class MostraPostActivity extends Activity {
 

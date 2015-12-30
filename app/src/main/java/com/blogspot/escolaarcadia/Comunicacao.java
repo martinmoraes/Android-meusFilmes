@@ -1,4 +1,4 @@
-package br.com.escolaarcadia.muesfilmes;
+package com.blogspot.escolaarcadia;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

@@ -1,4 +1,4 @@
-package br.com.escolaarcadia.muesfilmes.modelo;
+package com.blogspot.escolaarcadia.modelo;
 
 import java.util.ArrayList;
 

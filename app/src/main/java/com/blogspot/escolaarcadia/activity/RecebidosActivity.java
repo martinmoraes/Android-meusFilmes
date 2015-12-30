@@ -1,4 +1,4 @@
-package br.com.escolaarcadia.muesfilmes.activity;
+package com.blogspot.escolaarcadia.activity;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -19,9 +19,9 @@ import com.loopj.android.http.RequestParams;
 
 import org.apache.http.Header;
 
-import br.com.escolaarcadia.muesfilmes.Comunicacao;
-import br.com.escolaarcadia.muesfilmes.adapter.CustomListAdaptador;
-import br.com.escolaarcadia.muesfilmes.R;
+import com.blogspot.escolaarcadia.Comunicacao;
+import com.blogspot.escolaarcadia.adapter.CustomListAdaptador;
+import br.com.escolaarcadia.meusfilmes.R;
 
 public class RecebidosActivity extends Activity {
     private static CustomListAdaptador adaptador;

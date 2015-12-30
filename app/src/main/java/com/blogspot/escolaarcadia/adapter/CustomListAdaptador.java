@@ -1,4 +1,4 @@
-package br.com.escolaarcadia.muesfilmes.adapter;
+package com.blogspot.escolaarcadia.adapter;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -26,10 +26,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.escolaarcadia.muesfilmes.Comunicacao;
-import br.com.escolaarcadia.muesfilmes.R;
-import br.com.escolaarcadia.muesfilmes.modelo.Filme;
-import br.com.escolaarcadia.muesfilmes.modelo.Genero;
+import com.blogspot.escolaarcadia.Comunicacao;
+import br.com.escolaarcadia.meusfilmes.R;
+import com.blogspot.escolaarcadia.modelo.Filme;
+import com.blogspot.escolaarcadia.modelo.Genero;
 
 /**
  * Created by Martin on 25/08/2015.

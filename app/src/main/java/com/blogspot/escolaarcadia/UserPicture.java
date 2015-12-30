@@ -1,4 +1,4 @@
-package br.com.escolaarcadia.muesfilmes;
+package com.blogspot.escolaarcadia;
 
 import android.content.ContentResolver;
 import android.database.Cursor;
@@ -9,7 +9,6 @@ import android.graphics.RectF;
 import android.media.ExifInterface;
 import android.net.Uri;
 import android.provider.MediaStore;
-import android.util.Log;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

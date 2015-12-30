@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.com.escolaarcadia.muesfilmes" >
+    package="br.com.escolaarcadia.meusfilmes" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -19,7 +19,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="br.com.escolaarcadia.muesfilmes.activity.InicialActivity"
+            android:name="com.blogspot.escolaarcadia.activity.InicialActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,15 +27,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="br.com.escolaarcadia.muesfilmes.activity.RecebidosActivity"
+            android:name="com.blogspot.escolaarcadia.activity.RecebidosActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_lista_recebidos"
             android:theme="@style/FullscreenTheme" />
         <activity
-            android:name="br.com.escolaarcadia.muesfilmes.activity.EnviarActivity"
+            android:name="com.blogspot.escolaarcadia.activity.EnviarActivity"
             android:label="@string/title_activity_foto" />
         <activity
-            android:name="br.com.escolaarcadia.muesfilmes.activity.MostraPostActivity"
+            android:name="com.blogspot.escolaarcadia.activity.MostraPostActivity"
             android:label="@string/title_activity_mostra_post" >
         </activity>
     </application>

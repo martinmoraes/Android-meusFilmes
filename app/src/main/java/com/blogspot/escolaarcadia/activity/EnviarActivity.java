@@ -1,4 +1,4 @@
-package br.com.escolaarcadia.muesfilmes.activity;
+package com.blogspot.escolaarcadia.activity;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -25,9 +25,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
 
-import br.com.escolaarcadia.muesfilmes.Comunicacao;
-import br.com.escolaarcadia.muesfilmes.R;
-import br.com.escolaarcadia.muesfilmes.UserPicture;
+import com.blogspot.escolaarcadia.Comunicacao;
+import br.com.escolaarcadia.meusfilmes.R;
+import com.blogspot.escolaarcadia.UserPicture;
 
 public class EnviarActivity extends Activity {
     private ImageView imagemView;

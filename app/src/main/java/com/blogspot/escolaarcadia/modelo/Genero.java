@@ -1,4 +1,4 @@
-package br.com.escolaarcadia.muesfilmes.modelo;
+package com.blogspot.escolaarcadia.modelo;
 
 public class Genero {
 	private String id;

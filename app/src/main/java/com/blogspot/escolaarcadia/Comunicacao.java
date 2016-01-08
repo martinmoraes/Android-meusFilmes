@@ -50,13 +50,8 @@ public class Comunicacao {
     public static boolean isConectado(Context context) {
         try {
             ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-            if (cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnected()) {
-                return true;
-            } else if (cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnected()) {
-                return true;
-            } else {
-                return false;
-            }
+            return cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).isConnected() ||
+                    cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnected();
         } catch (Exception e) {
             Log.e("MEU_APP", "Comunicacao: ERRO ao verificar conectividade");
         }

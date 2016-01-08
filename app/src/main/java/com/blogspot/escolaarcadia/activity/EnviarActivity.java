@@ -17,8 +17,6 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
 
-import org.apache.http.Header;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -27,6 +25,8 @@ import java.util.UUID;
 
 import com.blogspot.escolaarcadia.Comunicacao;
 import br.com.escolaarcadia.meusfilmes.R;
+import cz.msebera.android.httpclient.Header;
+
 import com.blogspot.escolaarcadia.UserPicture;
 
 public class EnviarActivity extends Activity {
